@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Developer Blog</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <header>
+      <div class="header-content">
+        <div class="blog-name">
+          <a href="/">My Developer Blog</a>
+        </div>
+        <nav class="menu">
+          <a href="/">Home</a>
+          <a href="/about.md">About</a>
+          <a href="/contact.md">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Full-width column before the three columns -->
+    <div class="full-width-column" id="full-width-content">
+        <!-- Content from full-width.md will be loaded here -->
+    </div>
+
+    <div class="content">
+      <div class="column">
+        <h2>Column 1</h2>
+        <div id="column1-content">Loading column 1...</div>
+      </div>
+      <div class="column">
+        <h2>Column 2</h2>
+        <div id="column2-content">Loading column 2...</div>
+      </div>
+      <div class="column">
+        <h2>Column 3</h2>
+        <div id="column3-content">Loading column 3...</div>
+      </div>
+    </div>
+</div> <!-- End container div -->
+
+<!-- Add the footer here -->
+<footer>
+  <div class="footer-content">
+    <p>&copy; 2024 My Developer Blog. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Include the Marked.js library from a CDN -->
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<!-- Script to load and convert Markdown files -->
+<script>
+function loadMarkdownContent(divId, file) {
+    fetch(file)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Failed to fetch ${file}: ${response.statusText}`);
+            }
+            return response.text();
+        })
+        .then(text => {
+            document.getElementById(divId).innerHTML = marked.marked(text);
+        })
+        .catch(error => {
+            document.getElementById(divId).innerHTML = `Error loading ${file}: ${error}`;
+            console.error(error);
+        });
+}
+
+// Load content from Markdown files into the columns
+loadMarkdownContent('full-width-content', 'full-width.md'); // Full-width column
+loadMarkdownContent('column1-content', 'column1.md');        // First column
+loadMarkdownContent('column2-content', 'column2.md');        // Second column
+loadMarkdownContent('column3-content', 'column3.md');        // Third column
+</script>
+
+</body>
+</html>
