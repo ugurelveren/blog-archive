@@ -15,7 +15,7 @@
         </div>
         <nav class="menu">
           <a href="/">Home</a>
-          <a href="/about.md">About</a>
+          <a href="https://snap.as/ugurelveren/analog" target="_blank">Analog</a>
           <a href="/contact.md">Contact</a>
         </nav>
       </div>
@@ -28,15 +28,12 @@
 
     <div class="content">
       <div class="column">
-        <h2>Column 1</h2>
         <div id="column1-content">Loading column 1...</div>
       </div>
       <div class="column">
-        <h2>Column 2</h2>
         <div id="column2-content">Loading column 2...</div>
       </div>
       <div class="column">
-        <h2>Column 3</h2>
         <div id="column3-content">Loading column 3...</div>
       </div>
     </div>
@@ -52,25 +49,9 @@
 <!-- Include the Marked.js library from a CDN -->
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
+<script src="assets/main.js"></script>
 <!-- Script to load and convert Markdown files -->
 <script>
-function loadMarkdownContent(divId, file) {
-    fetch(file)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Failed to fetch ${file}: ${response.statusText}`);
-            }
-            return response.text();
-        })
-        .then(text => {
-            document.getElementById(divId).innerHTML = marked.marked(text);
-        })
-        .catch(error => {
-            document.getElementById(divId).innerHTML = `Error loading ${file}: ${error}`;
-            console.error(error);
-        });
-}
-
 // Load content from Markdown files into the columns
 loadMarkdownContent('full-width-content', 'full-width.md'); // Full-width column
 loadMarkdownContent('column1-content', 'column1.md');        // First column

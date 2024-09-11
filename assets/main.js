@@ -34,4 +34,4 @@ function getMarkdownFilenameFromURL() {
 
 // Load the specific blog post based on the URL path
 const postFile = 'posts/' + getMarkdownFilenameFromURL(); // Combine 'posts/' with the filename
-loadMarkdownContent('post-content', postFile);
+loadMarkdownContent('post-content', '../'+postFile);

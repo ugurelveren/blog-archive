@@ -1,3 +1,3 @@
-## Column 2
+## Tech
 
 This is the content for the second column.
