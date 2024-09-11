@@ -20,8 +20,16 @@ function loadMarkdownContent(divId, file) {
 // Extract the Markdown filename from the current URL path
 function getMarkdownFilenameFromURL() {
     const path = window.location.pathname; // Get the current path
-    const filename = path.substring(path.lastIndexOf('/') + 1); // Extract the filename
-    return filename || 'default.md'; // Return the filename or default if empty
+    const fragment = window.location.hash.substring(1); // Get the fragment (removes the # symbol)
+    
+    // Check if the fragment is present and return it as the filename, otherwise use path
+    if (fragment) {
+        return fragment + '.md'; // Append .md extension to fragment
+    }
+
+    // If no fragment, use the last part of the path or default to 'default.md'
+    const filename = path.substring(path.lastIndexOf('/') + 1); // Extract the filename from path
+    return filename ? filename + '.md' : 'default.md'; // Append .md or return 'default.md'
 }
 
 // Load the specific blog post based on the URL path
