@@ -1,3 +1,11 @@
+---
+title: "Saga Design Pattern: Choreography and Orchestration"
+date: 2024-06-18
+author: "Ugur"
+keywords: "Saga design pattern, microservices, Choreography, Orchestration, ACID transactions, distributed systems, database per service"
+description: "Learn about the Saga design pattern and how it helps manage long-running transactions in microservice architecture, including Choreography and Orchestration approaches."
+---
+
 # Saga Design Pattern
 
 **June 18, 2024**

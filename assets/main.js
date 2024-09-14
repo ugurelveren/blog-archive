@@ -1,20 +1,81 @@
 // Function to load and convert Markdown file
 function loadMarkdownContent(divId, file) {
-    fetch(file)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Failed to fetch ${file}: ${response.statusText}`);
-            }
-            return response.text();
-        })
-        .then(text => {
-            // Convert Markdown to HTML and load it into the specified div
-            document.getElementById(divId).innerHTML = marked.marked(text);
-        })
-        .catch(error => {
-            document.getElementById(divId).innerHTML = `Error loading ${file}: ${error}`;
-            console.error(error);
-        });
+
+    const text = readFileSync(file);
+    if(text != null)
+    {   
+        var content = readMetadata(text);
+
+        document.getElementById(divId).innerHTML = marked.marked(content);
+    }
+}
+
+function readMetadata(text)
+{
+    if(text != null)
+    {
+        //regex for metadata
+        const frontMatterRegex = /^---\s*\n([\s\S]+?)\n---/;
+
+        var match = text.match(frontMatterRegex);
+        if(match)
+        {
+            const yamlContent = match[1]; 
+            //ToDo Create metedata
+            processMetaData(yamlContent);
+            text = text.replace(frontMatterRegex, ''); //
+        }
+    }
+    return text;
+}
+
+function processMetaData(metadata){
+
+    const lines = metadata.split('\n');
+    const metaTags = {};
+    lines.forEach(line => {
+        if (line.trim()) {
+          const [key, value] = line.split(':').map(str => str.trim());
+          metaTags[key] = value.replace(/["']/g, ''); // Remove quotes around the values
+        }
+      });
+
+      for (const key in metaTags) {
+        if (metaTags.hasOwnProperty(key)) {
+            if (key === 'canonical') {
+                // Add canonical link tag
+                const link = document.createElement('link');
+                link.rel = 'canonical';
+                link.href = metaTags[key];
+                document.head.appendChild(link);
+              } else {
+                // Add regular meta tags
+                const meta = document.createElement('meta');
+                meta.name = key;
+                meta.content = metaTags[key];
+                document.head.appendChild(meta);
+      
+                // Set the title tag if it exists
+                if (key === 'title') {
+                  document.title = metaTags[key];
+                }
+              }   
+        }
+      }
+}
+
+//it is depreceted but
+function readFileSync(filePath) {
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", filePath, false); // false for synchronous request
+    xhr.send();
+
+    if (xhr.status === 200) {
+        return xhr.responseText;
+    } else {
+        console.log("Failed to load file:", xhr.status);
+        return null;
+    }
 }
 
 // Extract the Markdown filename from the current URL path
