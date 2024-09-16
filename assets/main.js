@@ -1,13 +1,12 @@
 // Function to load and convert Markdown file
-function loadMarkdownContent(divId, file) {
+function loadMarkdownContent(file) {
 
-    const text = readFileSync(file);
+    var text = readFileSync(file);
     if(text != null)
     {   
-        var content = readMetadata(text);
-
-        document.getElementById(divId).innerHTML = marked.marked(content);
+        text = readMetadata(text);
     }
+    return text;
 }
 
 function readMetadata(text)
@@ -93,6 +92,45 @@ function getMarkdownFilenameFromURL() {
     return filename ? filename + '.md' : 'default.md'; // Append .md or return 'default.md'
 }
 
-// Load the specific blog post based on the URL path
-const postFile = 'posts/' + getMarkdownFilenameFromURL(); // Combine 'posts/' with the filename
-loadMarkdownContent('post-content', '../'+postFile);
+function loadPostPage(){
+    // Load the specific blog post based on the URL path
+    const postFile = 'posts/' + getMarkdownFilenameFromURL(); // Combine 'posts/' with the filename
+    var content = loadMarkdownContent('../'+postFile);
+
+
+    function pageLoaded() {
+        document.getElementById('post-content').innerHTML = marked.marked(content);
+        insertDateAfterH1();
+    }
+
+    window.onload = pageLoaded;
+}
+
+function loadIndexPage()
+{
+    document.getElementById('full-width-content').innerHTML = marked.marked(loadMarkdownContent('full-width.md'));
+    document.getElementById('column1-content').innerHTML = marked.marked(loadMarkdownContent('column1.md'));
+    document.getElementById('column2-content').innerHTML = marked.marked(loadMarkdownContent('column2.md'));
+    document.getElementById('column3-content').innerHTML = marked.marked(loadMarkdownContent('column3.md'));
+    // Load content from Markdown files into the columns
+}
+
+function insertDateAfterH1() {
+    // Read the date from the meta tag
+    const metaDate = document.querySelector('meta[name="date"]').getAttribute('content');
+    const dateObj = new Date(metaDate);
+
+    // Convert date to "Month Day, Year" format
+    const options = { year: 'numeric', month: 'long', day: 'numeric',timeZone: 'UTC'};
+    const formattedDate = dateObj.toLocaleDateString('en-US',options);
+
+    // Create the <p><em> tag and insert the date
+    const p = document.createElement('p');
+    const em = document.createElement('em');
+    em.textContent = formattedDate;
+    p.appendChild(em);
+
+    // Insert after the first <h1> tag
+    const h1 = document.querySelector('h1');
+    h1.insertAdjacentElement('afterend', p);
+}

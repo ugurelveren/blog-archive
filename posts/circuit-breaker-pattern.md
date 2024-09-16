@@ -6,7 +6,6 @@ keywords: "Circuit Breaker pattern, cloud design patterns, distributed systems, 
 description: "Understand the Circuit Breaker pattern, its implementation, and how it improves resiliency in cloud-based distributed systems."
 ---
 # Cloud Design Patterns: Circuit Breaker Pattern
-*November 29, 2023*
 
 The circuit breaker pattern stops a service from trying again to call another service when the previous attempts have failed multiple times. It's similar to electrical circuit breakers that automatically cut off the current when there's abnormal activity.
 

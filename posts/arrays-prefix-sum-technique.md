@@ -7,7 +7,6 @@ description: "An introduction to the Prefix Sum technique for efficiently comput
 ---
 
 # Arrays: Prefix Sum Technique
-*February 24, 2023*
 
 Hello there! The prefix sum technique involves creating an array where the `prefix[i]` is the sum of all elements up to index `i`. This technique can also be referred to as the cumulative sum, inclusive scan, or simply scan.
 

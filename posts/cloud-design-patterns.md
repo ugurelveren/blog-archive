@@ -6,7 +6,6 @@ keywords: "Cloud design patterns, scalability, reliability, security, cloud arch
 description: "An overview of common cloud design patterns and how they help address challenges such as scalability, reliability, and security in cloud applications."
 ---
 # Cloud Design Patterns
-*November 24, 2023*
 
 The cloud is vast. Azure docs have around a hundred thousand pages, and AWS is just as big. Other cloud providers are out there too. Each gives you lots of apps, different rules, and dozens of integrations, so creating cloud-native ones has its challenges.
 

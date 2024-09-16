@@ -6,7 +6,6 @@ keywords: "food ingredients, food safety, FDA, EFSA, global food regulations, or
 description: "A personal reflection on food ingredient awareness, food regulations, and the differences between the FDA and EFSA standards."
 ---
 # A Casual Exploration of Ingredient Awareness and Global Food Regulations
-*January 3, 2024*
 
 I often find my mind wandering to different topics, interrupting phone calls, meetings, or reading sessions. These thoughts take center stage, making it challenging to refocus on the original task.
 

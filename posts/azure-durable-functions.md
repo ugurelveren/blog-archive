@@ -7,7 +7,6 @@ description: "Explore Azure Durable Functions and learn how to build long-runnin
 ---
 
 # Azure Durable Functions
-*June 29, 2023*
 
 ## Azure Functions and Azure Durable Functions
 

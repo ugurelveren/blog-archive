@@ -7,7 +7,6 @@ description: "A journey of migrating from HashNode to Writefreely for more perso
 ---
 
 # Goodbye HashNode, Welcome Writefreely.
-*November 5, 2023*
 
 Since the beginning of the pandemic, I've noticed a repetitive pattern of content on the internet across various platforms. Whether it's on Reddit, different social media sites, or news websites and popular blogs, the same or similar content keeps circulating. Additionally, Google searches have taken a peculiar turn. When searching in English, the results often differ from the same websites, and in other languages like Turkish, you might encounter clickbait websites with strong SEO but weak content.
 

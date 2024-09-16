@@ -6,7 +6,6 @@ keywords: "two pointer, arrays, algorithm, array problems, sum, intersection, su
 description: "Discover how the Two Pointer Technique can optimize solutions for array problems, including Two Sum and array intersection."
 ---
 # Arrays: Two Pointer Technique
-*February 2, 2023*
 
 ## What Is The Two Pointer Technique?
 

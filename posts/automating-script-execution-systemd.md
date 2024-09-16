@@ -7,7 +7,6 @@ description: "Learn how to automate script execution using Systemd on Linux, wit
 ---
 
 # Automating Script Execution with Systemd on Linux
-*March 23, 2023*
 
 In my previous blog post, I created a script that controls the fan speed on my Raspberry Pi. However, I encountered a problem – every time I restarted my Raspberry Pi, I had to manually run the script again, which was not ideal.
 

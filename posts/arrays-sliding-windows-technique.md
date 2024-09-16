@@ -6,7 +6,6 @@ keywords: "sliding window, algorithm, arrays, subarray, sum, maximum sum, subarr
 description: "Learn how to solve array problems efficiently using the Sliding Windows technique with examples."
 ---
 # Arrays: Sliding Windows Technique
-*February 16, 2023*
 
 Window Sliding Technique is a strategy that aims to reduce nested loops for solving problems where you need to analyze a sequence of elements, like an array or a string. The technique reduces the use of a nested loop and replaces it with a single loop, reducing the time complexity.
 

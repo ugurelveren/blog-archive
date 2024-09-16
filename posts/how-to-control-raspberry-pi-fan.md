@@ -7,7 +7,6 @@ description: "A guide on controlling the fan speed on a Raspberry Pi using Pytho
 ---
 
 # How to control Raspberry Pi Fan
-*March 22, 2023*
 
 Last week, I did something unplanned: I bought a Raspberry Pi without any specific project in mind. I came across a Mastodon account (@rpilocator@mastodon.social) that helps people locate Raspberry Pis and I decided to get one. And now, here it is! I'm writing my first blog post about the Raspberry Pi Fan Control.
 

@@ -8,8 +8,6 @@ description: "Learn about the Saga design pattern and how it helps manage long-r
 
 # Saga Design Pattern
 
-**June 18, 2024**
-
 In this article, I will discuss the Saga design pattern. First, we'll address some technical challenges of creating ACID transactions. Then, we'll explore the Saga design pattern and how to implement it.
 
 ## Database Per Service Pattern

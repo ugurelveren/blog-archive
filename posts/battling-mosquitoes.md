@@ -7,7 +7,6 @@ description: "A personal story about dealing with a mosquito invasion in Souther
 ---
 
 # Battling Mosquitoes: A Personal Journey
-*November 8, 2023*
 
 In late August, southern California faced a mosquito invasion. These tiny pests seemed to appear out of nowhere, leaving their itchy marks on unsuspecting victims. Whether you had a bug screen or not, they found their way into your home, and you'd wake up with irritating mosquito bites. At first, you might not notice them, but as time passed, the incessant itching would become undeniable.
 
