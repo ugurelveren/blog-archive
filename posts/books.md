@@ -1,4 +1,4 @@
-# [Book List](posts/#books)
+# [Book List](/posts/#books)
 
 - On Becoming Baby Wise: Giving Your Infant the Gift of Nighttime Sleep
 - Why the North Star Stands Still and Other Indian Legends

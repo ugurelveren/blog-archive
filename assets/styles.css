@@ -148,10 +148,22 @@ button:hover {
 }
 
 a {
-    color: #252b2e;; /* Set blackish color for all links */
+    color: #333;
     text-decoration: none;
+    position: relative;
 }
 
-a:hover {
-    color:  #007acc; /* Slightly darker shade on hover */
+a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: #252b2e;
+    transition: width 0.3s ease;
+}
+
+a:hover::after {
+    width: 100%; /* Full underline appears on hover */
 }
