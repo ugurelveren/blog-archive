@@ -109,9 +109,9 @@ function loadPostPage(){
 function loadIndexPage()
 {
     document.getElementById('full-width-content').innerHTML = marked.marked(loadMarkdownContent('full-width.md'));
-    document.getElementById('column1-content').innerHTML = marked.marked(loadMarkdownContent('column1.md'));
-    document.getElementById('column2-content').innerHTML = marked.marked(loadMarkdownContent('column2.md'));
-    document.getElementById('column3-content').innerHTML = marked.marked(loadMarkdownContent('column3.md'));
+    document.getElementById('column1-content').innerHTML = marked.marked(loadMarkdownContent('posts/posts.md'));
+    document.getElementById('column2-content').innerHTML = marked.marked(loadMarkdownContent('posts/personal.md'));
+    document.getElementById('column3-content').innerHTML = marked.marked(loadMarkdownContent('posts/books.md'));
     // Load content from Markdown files into the columns
 }
 

@@ -146,3 +146,12 @@ button:hover {
     padding: 2px 5px;
     border-radius: 3px;
 }
+
+a {
+    color: #252b2e;; /* Set blackish color for all links */
+    text-decoration: none;
+}
+
+a:hover {
+    color:  #007acc; /* Slightly darker shade on hover */
+}
