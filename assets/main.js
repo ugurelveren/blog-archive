@@ -97,6 +97,12 @@ function loadPostPage(){
     const postFile = 'posts/' + getMarkdownFilenameFromURL(); // Combine 'posts/' with the filename
     var content = loadMarkdownContent('../'+postFile);
 
+    window.addEventListener('hashchange', () => {
+        const postFile = 'posts/' + getMarkdownFilenameFromURL(); // Combine 'posts/' with the filename
+        var content = loadMarkdownContent('../'+postFile);
+        document.getElementById('post-content').innerHTML = marked.marked(content);
+        insertDateAfterH1();
+      });
 
     function pageLoaded() {
         document.getElementById('post-content').innerHTML = marked.marked(content);
