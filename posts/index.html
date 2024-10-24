@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Updates from Ugur</title>
+    <link rel="stylesheet" type="text/css" href="/assets/styles.css">
+</head>
+<body>
+<div class="container">
+    <header>
+      <div class="header-content">
+        <div class="blog-name">
+          <a href="/">Ugur's Personal Documentation</a>
+        </div>
+        <nav class="menu">
+          <a href="https://ugurelveren.com" target="_blank">Root</a>
+          <a href="/">Blog</a>
+          <a href="https://photos.ugurelveren.com" target="_blank">Photos</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Full-width column before the three columns -->
+    <div class="full-width-column" id="full-width-content">
+        <!-- Content from full-width.md will be loaded here -->
+    </div>
+
+    <div class="content">
+      <div class="column">
+        <div id="column1-content">Loading column 1...</div>
+      </div>
+      <div class="column">
+        <div id="column2-content">Loading column 2...</div>
+      </div>
+      <div class="column">
+        <div id="column3-content">Loading column 3...</div>
+      </div>
+    </div>
+</div> <!-- End container div -->
+
+<!-- Add the footer here -->
+<footer>
+  <div class="footer-content">
+    <p>&copy; 2024 My Personal Blog. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Include the Marked.js library from a CDN -->
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<script src="/assets/main.js"></script>
+<!-- Script to load and convert Markdown files -->
+<script>
+
+loadIndexPage();
+</script>
+
+</body>
+</html>
