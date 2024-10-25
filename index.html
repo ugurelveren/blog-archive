@@ -21,12 +21,13 @@
       </div>
     </header>
 
-    <!-- Full-width column before the three columns -->
-    <div class="full-width-column" id="full-width-content">
+    <div id="root">
+      <!-- Full-width column before the three columns -->
+      <div class="full-width-column" id="full-width-content">
         <!-- Content from full-width.md will be loaded here -->
-    </div>
+      </div>
 
-    <div class="content">
+      <div class="content">
       <div class="column">
         <div id="column1-content">Loading column 1...</div>
       </div>
@@ -36,7 +37,16 @@
       <div class="column">
         <div id="column3-content">Loading column 3...</div>
       </div>
+      </div>
     </div>
+    
+
+    <main>
+      <article id="post-content" class="post-container">
+          <!-- Markdown content will be loaded here -->
+          Loading post content...
+      </article>
+  </main>
 </div> <!-- End container div -->
 
 <!-- Add the footer here -->
@@ -52,8 +62,19 @@
 <script src="/assets/main.js"></script>
 <!-- Script to load and convert Markdown files -->
 <script>
+if (window.location.pathname === "/" || window.location.pathname === "") {
+  loadIndexPage();
+}else{
+  loadPostPage();
 
-loadIndexPage();
+  const divId = "root";
+  const element = document.getElementById(divId);
+    if (element) {
+        element.remove();
+        console.log(`Div with ID '${divId}' has been removed.`);
+    }
+}
+   
 </script>
 
 </body>
