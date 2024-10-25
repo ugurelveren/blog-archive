@@ -9,5 +9,18 @@ Welcome to my personal blog, where I share my thoughts, experiences, and tips on
 - **GitHub Hosted:** All content is hosted on GitHub, making it easy to track changes.
 - **Developer-Friendly Design:** Simple, clean, and focused on content.
 
+## Serving the Project Locally
+To run the project in a development environment, you can use the `serve` command. This will launch a local server to serve the static files. Make sure you have `serve` installed (you can install it with `npm install -g serve`).
+
+Run the following command:
+
+```bash
+serve -s . -p 8000
+```
+- `-s` Serves the current directory as static files.
+- `-p 8000` Specifies the port number (8000 in this case).
+
+This will make your project available at `http://localhost:8000`.
+
 ## License
 This project is licensed under the GNU General Public License. For more details, please see the [LICENSE](LICENSE) file.
