@@ -64,6 +64,10 @@
 <script>
 if (window.location.pathname === "/" || window.location.pathname === "") {
   loadIndexPage();
+  const mainTag = document.querySelector('main');
+  if (mainTag) {
+    mainTag.remove();
+  }
 }else{
   loadPostPage();
 
